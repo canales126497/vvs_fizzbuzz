@@ -32,4 +32,28 @@ final class CalculatorTest extends TestCase
 
         $this->assertEquals(2, $result);
     }
+
+    /**
+     * @test
+     */
+    public function shouldModuleTwoArguments()
+    {
+        $calculator = new Calculator();
+
+        $result = $calculator->module(10, 2);
+
+        $this->assertEquals(0, $result);
+    }
+
+    /**
+     * @test
+     */
+    public function shouldNotModuleTwoArguments()
+    {
+        $calculator = new Calculator();
+
+        $result = $calculator->module(11, 2);
+
+        $this->assertEquals(1, $result);
+    }
 }
