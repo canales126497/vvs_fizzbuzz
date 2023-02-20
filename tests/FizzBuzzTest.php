@@ -9,14 +9,19 @@ use PHPUnit\Framework\TestCase;
 
 class FizzBuzzTest extends TestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->fb = new FizzBuzz();
+    }
+
+
     /**
      * @test
      */
     public function isFizz()
     {
-        $fb = new FizzBuzz();
-
-        $result = $fb->fizzbuzz(6);
+        $result = $this->fb->fizzbuzz(6);
 
         $this->assertEquals("FIZZ", $result);
     }
@@ -26,9 +31,7 @@ class FizzBuzzTest extends TestCase
      */
     public function isBuzz()
     {
-        $fb = new FizzBuzz();
-
-        $result = $fb->fizzbuzz(10);
+        $result = $this->fb->fizzbuzz(10);
 
         $this->assertEquals("BUZZ", $result);
     }
@@ -38,9 +41,7 @@ class FizzBuzzTest extends TestCase
      */
     public function isFizzBuzz()
     {
-        $fb = new FizzBuzz();
-
-        $result = $fb->fizzbuzz(15);
+        $result = $this->fb->fizzbuzz(15);
 
         $this->assertEquals("FIZZBUZZ!!!", $result);
     }
@@ -50,9 +51,7 @@ class FizzBuzzTest extends TestCase
      */
     public function isNumber()
     {
-        $fb = new FizzBuzz();
-
-        $result = $fb->fizzbuzz(16);
+        $result = $this->fb->fizzbuzz(16);
 
         $this->assertEquals("16", $result);
     }
